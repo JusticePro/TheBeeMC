@@ -1,5 +1,6 @@
 package me.justicepro.beehub.Commands.Staff.Tools;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
@@ -23,7 +24,7 @@ public class NPCCommand extends Command {
 			Player player = (Player) sender;
 			if (args.length > 0) {
 				NPCRegistry register = CitizensAPI.getNPCRegistry();
-				NPC npc = register.createNPC(EntityType.PLAYER, args[0]);
+				NPC npc = register.createNPC(EntityType.PLAYER, ChatColor.translateAlternateColorCodes('&', args[0]));
 				npc.spawn(player.getLocation());
 			}else {
 				ChatUtils.sendMessage("Usage", "/npc <playername>", player);
