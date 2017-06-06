@@ -5,3 +5,4 @@ You may not use this plugin in any commercial servers or sell this plugin withou
 
 <h1>Developer Team</h1>
 JusticePro (Lead Developer)
+NICKPATROL (Minor Developer, TheBeeMC Owner)
