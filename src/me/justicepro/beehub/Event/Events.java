@@ -249,6 +249,10 @@ public class Events implements Listener {
 			Plugin.showPlayerScoreboard(target);
 		}
 		for (Player target : Bukkit.getOnlinePlayers()) {
+			PlayerData data = new PlayerData(target);
+			if (player==target) {
+				target.setRankPrefix(player.getName(), target.getRank().setRankPrefix(player.getName(), player));
+			}
 			if (target.getWorld()==player.getWorld()) {
 				target.showPlayer(player);
 				player.showPlayer(target);
