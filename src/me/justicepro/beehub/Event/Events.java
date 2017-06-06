@@ -149,7 +149,7 @@ public class Events implements Listener {
 	public void onChat(AsyncPlayerChatEvent event) {
 		PlayerData data = new PlayerData(event.getPlayer().getName());
 		for (Player player : event.getPlayer().getWorld().getPlayers()) {
-			player.sendMessage(event.getPlayer().getDisplayName() + ChatColor.DARK_GRAY + " » " + ChatColor.WHITE + event.getMessage());
+			player.sendMessage(event.getPlayer().getDisplayName() + ChatColor.DARK_GRAY + " Â» " + ChatColor.WHITE + event.getMessage());
 		}
 		event.setCancelled(true);
 	}
@@ -159,16 +159,16 @@ public class Events implements Listener {
 		event.setJoinMessage(null);
 		PlayerData data = new PlayerData(event.getPlayer().getName());
 		Player player = event.getPlayer();
+		data.getRank().setRank(player);
 		for (Player target : Bukkit.getOnlinePlayers()) {
-			data.getRank().setRank(player);
 			PacketPlayOutPlayerListHeaderFooter headerfooter = new PacketPlayOutPlayerListHeaderFooter();
 			try {
 			    Field header = headerfooter.getClass().getDeclaredField("a");
 			    Field footer = headerfooter.getClass().getDeclaredField("b");
 			    header.setAccessible(true);
 			    footer.setAccessible(true);
-			    header.set(headerfooter, ChatSerializer.a("\"§eTheBeeMC!\""));
-			    footer.set(headerfooter, ChatSerializer.a("\"§aEnjoy the server!\""));
+			    header.set(headerfooter, ChatSerializer.a("\"Â§eTheBeeMC!\""));
+			    footer.set(headerfooter, ChatSerializer.a("\"Â§aEnjoy the server!\""));
 			} catch (Exception ex) {
 			    ex.printStackTrace();
 			}
