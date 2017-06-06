@@ -3,7 +3,6 @@ package me.justicepro.beehub.Data;
 import java.io.File;
 import java.io.IOException;
 
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class Data {
@@ -17,7 +16,7 @@ public class Data {
 	}
 	
 	public Data(String file) {
-		this.file = new File(Bukkit.getPluginManager().getPlugin("Hub").getDataFolder(), file);
+		this.file = new File("data", file);
 		config = YamlConfiguration.loadConfiguration(this.file);
 	}
 	

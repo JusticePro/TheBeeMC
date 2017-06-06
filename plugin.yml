@@ -1,5 +1,5 @@
 name: Hub
 version: 1.0
-main: me.justicepro.beehub
+main: me.justicepro.beehub.Plugin
 
-depends: [UKitSDK]
+depends: [UKitSDK, Citizens]

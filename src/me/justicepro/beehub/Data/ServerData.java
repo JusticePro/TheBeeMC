@@ -1,6 +1,5 @@
 package me.justicepro.beehub.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ServerData extends Data {

@@ -29,7 +29,7 @@ import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
 
 public class Events implements Listener {
-	
+
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent event) {
 		Player player = (Player) event.getWhoClicked();
@@ -45,40 +45,40 @@ public class Events implements Listener {
 					ChatUtils.sendMessage("ERROR", "You don't have a bugged rank.", player);
 				}
 			}
-			
+
 			if (event.getCurrentItem().equals(InventoryManager.getErrorInventory().getItem(1))) {
 				ChatUtils.sendMessage("ERROR", "If you don't have your rank. Contact an Admin.", player);
 			}
 		}
-		
+
 		if (inv.getName().equalsIgnoreCase(InventoryManager.getPunishInventory().getName())) {
 			event.setCancelled(true);
 			PlayerData data = new PlayerData(player.getName());
 			if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_RED + "Warn Player")) {
-				player.performCommand("warn " + data.get("punishplayer") + " " + data.get("punishreason"));
+				player.performCommand("hub:warn " + data.get("punishplayer") + " " + data.get("punishreason"));
 			}
 			if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_RED + "Kick Player")) {
-				player.performCommand("kick " + data.get("punishplayer") + " " + data.get("punishreason"));
+				player.performCommand("hub:kick " + data.get("punishplayer") + " " + data.get("punishreason"));
 			}
 			if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_RED + "Ban Player")) {
-				player.performCommand("ban " + data.get("punishplayer") + " " + data.get("punishreason"));
+				player.performCommand("hub:ban " + data.get("punishplayer") + " " + data.get("punishreason"));
 			}
 			if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "Unban Player")) {
-				player.performCommand("unban " + data.get("punishplayer"));
+				player.performCommand("hub:unban " + data.get("punishplayer"));
 			}
 		}
-		
+
 		if (inv.getName().equalsIgnoreCase(InventoryManager.getStaffInventory().getName())) {
 			event.setCancelled(true);
 		}
-		
+
 		if (inv.getName().equalsIgnoreCase(InventoryManager.getBuyInventory().getName())) {
 			event.setCancelled(true);
 			PlayerData data = new PlayerData(player.getName());
-			
+
 			if (event.getCurrentItem().getType()!=Material.AIR) {
 				int cost = Integer.parseInt(event.getCurrentItem().getItemMeta().getLore().get(0).split(ChatColor.BLUE + "")[1].split(" ")[0]);
-				
+
 				if (event.getCurrentItem().getType().equals(Material.INK_SACK) && event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&aSpecial Rank"))) {
 					if (data.getCoins() >= 1000000000) {
 						if (Rank.SPECIAL.hasPermission(player)) {
@@ -117,11 +117,11 @@ public class Events implements Listener {
 				}
 			}
 		}
-		
+
 		if (inv.getName().equalsIgnoreCase(InventoryManager.getSellInventory().getName())) {
 			event.setCancelled(true);
 			PlayerData data = new PlayerData(player.getName());
-			
+
 			if (event.getCurrentItem().getType()!=Material.AIR) {
 				int cost = Integer.parseInt(event.getCurrentItem().getItemMeta().getLore().get(0).split(ChatColor.BLUE + "")[1].split(" ")[0]);
 				if (event.getClick().isRightClick()) {
@@ -144,7 +144,7 @@ public class Events implements Listener {
 			}
 		}
 	}
-	
+
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		PlayerData data = new PlayerData(event.getPlayer().getName());
@@ -163,14 +163,14 @@ public class Events implements Listener {
 		for (Player target : Bukkit.getOnlinePlayers()) {
 			PacketPlayOutPlayerListHeaderFooter headerfooter = new PacketPlayOutPlayerListHeaderFooter();
 			try {
-			    Field header = headerfooter.getClass().getDeclaredField("a");
-			    Field footer = headerfooter.getClass().getDeclaredField("b");
-			    header.setAccessible(true);
-			    footer.setAccessible(true);
-			    header.set(headerfooter, ChatSerializer.a("\"&eThe&lBeeMC\n&bHome of &aSuper Fun&b Minigames\""));
-			    footer.set(headerfooter, ChatSerializer.a("\"§a§lstore.BeeMC.com\""));
+				Field header = headerfooter.getClass().getDeclaredField("a");
+				Field footer = headerfooter.getClass().getDeclaredField("b");
+				header.setAccessible(true);
+				footer.setAccessible(true);
+				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&eThe&lBeeMC\n&bHome of &aSuper Fun&b Minigames\"")));
+				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.BeeMC.com\"")));
 			} catch (Exception ex) {
-			    ex.printStackTrace();
+				ex.printStackTrace();
 			}
 			((CraftPlayer) target).getHandle().playerConnection.sendPacket(headerfooter);
 		}
@@ -180,7 +180,7 @@ public class Events implements Listener {
 			}else {
 				player.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&aYou've been banned."));
 			}
-			
+
 		}
 		data.getRank().setRank(player);
 		for (Player target : Bukkit.getOnlinePlayers()) {
@@ -262,5 +262,4 @@ public class Events implements Listener {
 			}
 		}
 	}
-
 }

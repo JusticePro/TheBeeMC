@@ -10,6 +10,7 @@ import me.justicepro.beehub.Commands.ERROR.ErrorCommand;
 import me.justicepro.beehub.Commands.Normal.BalanceCommand;
 import me.justicepro.beehub.Commands.Normal.MsgCommand;
 import me.justicepro.beehub.Commands.Normal.ServerCommand;
+import me.justicepro.beehub.Commands.Normal.TestCommand;
 import me.justicepro.beehub.Commands.Premium.FireworkCommand;
 import me.justicepro.beehub.Commands.Premium.FlightCommand;
 import me.justicepro.beehub.Commands.Staff.Economy.CoinCommand;
@@ -45,7 +46,8 @@ public class CommandManager {
 				new DisguiseCommand(),
 				new GamemodeCommand(),
 				new PunishCommand(),
-				new ErrorCommand());
+				new ErrorCommand(),
+				new TestCommand());
 		
 	}
 	
