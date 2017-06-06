@@ -23,6 +23,7 @@ import me.justicepro.beehub.Commands.Staff.Punishing.WarnCommand;
 import me.justicepro.beehub.Commands.Staff.Ranks.RankCommand;
 import me.justicepro.beehub.Commands.Staff.Tools.DisguiseCommand;
 import me.justicepro.beehub.Commands.Staff.Tools.GamemodeCommand;
+import me.justicepro.beehub.Commands.Staff.Tools.NPCCommand;
 
 public class CommandManager {
 	
@@ -47,7 +48,7 @@ public class CommandManager {
 				new GamemodeCommand(),
 				new PunishCommand(),
 				new ErrorCommand(),
-				new TestCommand());
+				new NPCCommand());
 		
 	}
 	
