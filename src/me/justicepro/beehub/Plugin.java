@@ -13,11 +13,13 @@ import me.justicepro.ukit.Scoreboard.SidebarUtils;
 
 public class Plugin extends JavaPlugin {
 	
+	// TEST
 	@Override
 	public void onEnable() {
 		CommandManager manager = new CommandManager();
 		manager.registerAll();
 		Bukkit.getPluginManager().registerEvents(new Events(), this);
+		
 	}
 	
 	public static void showPlayerScoreboard(Player target) {
