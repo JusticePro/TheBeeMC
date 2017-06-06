@@ -149,7 +149,7 @@ public class Events implements Listener {
 	public void onChat(AsyncPlayerChatEvent event) {
 		PlayerData data = new PlayerData(event.getPlayer().getName());
 		for (Player player : event.getPlayer().getWorld().getPlayers()) {
-			player.sendMessage(event.getPlayer().getDisplayName() + ChatColor.DARK_GRAY + " Â» " + ChatColor.WHITE + event.getMessage());
+			player.sendMessage(event.getPlayer().getDisplayName() + ChatColor.DARK_GRAY + " » " + ChatColor.WHITE + event.getMessage());
 		}
 		event.setCancelled(true);
 	}
@@ -167,8 +167,8 @@ public class Events implements Listener {
 			    Field footer = headerfooter.getClass().getDeclaredField("b");
 			    header.setAccessible(true);
 			    footer.setAccessible(true);
-			    header.set(headerfooter, ChatSerializer.a("\"Â§eTheBeeMC!\""));
-			    footer.set(headerfooter, ChatSerializer.a("\"Â§aEnjoy the server!\""));
+			    header.set(headerfooter, ChatSerializer.a("\"&eThe&lBeeMC\n&bHome of &aSuper Fun&b Minigames\""));
+			    footer.set(headerfooter, ChatSerializer.a("\"§a§lstore.BeeMC.com\""));
 			} catch (Exception ex) {
 			    ex.printStackTrace();
 			}
