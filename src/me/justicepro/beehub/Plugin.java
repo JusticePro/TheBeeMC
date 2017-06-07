@@ -25,19 +25,15 @@ public class Plugin extends JavaPlugin {
 		SidebarUtils.showSidebarDisplay(target,
 				ChatColor.translateAlternateColorCodes('&', "&6&lThe&e&lBee"),
 				"",
-				ChatColor.translateAlternateColorCodes('&', "&c&lRank"),
+				ChatColor.translateAlternateColorCodes('&', "&2&lRank"),
 				ChatColor.translateAlternateColorCodes('&', "&9" + data.getRank().getKey()),
 				" ",
-				ChatColor.translateAlternateColorCodes('&', "&a&lTokens"),
+				ChatColor.translateAlternateColorCodes('&', "&e&lTokens"),
 				ChatColor.translateAlternateColorCodes('&', "&7" + data.getCoins()),
 				"  ",
-				ChatColor.translateAlternateColorCodes('&', "&b&lLuckyCrates"),
-				ChatColor.translateAlternateColorCodes('&', "&7" + data.getCrates() + " "),
-				"   ",
 				ChatColor.translateAlternateColorCodes('&', "&lServer"), 
 				ChatColor.translateAlternateColorCodes('&', "&7" + target.getWorld().getName()),
-				"    ",
-				ChatColor.translateAlternateColorCodes('&', "&8&l-----------"),
+				"   ",
 				ChatColor.translateAlternateColorCodes('&', "&6play.&eTheBee&6.com"));
 	}
 	
