@@ -14,6 +14,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -262,4 +263,15 @@ public class Events implements Listener {
 			}
 		}
 	}
+	
+	@EventHandler
+	public void onCommand(PlayerCommandPreprocessEvent event) {
+		Player player = event.getPlayer();
+		
+		if (event.getMessage().toLowerCase().startsWith("/npc")) {
+			String message = event.getMessage();
+			event.setMessage("/hub:npc" + message.substring("/npc".length()));
+		}
+	}
+	
 }

@@ -23,11 +23,21 @@ public class NPCCommand extends Command {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
 			if (args.length > 0) {
-				NPCRegistry register = CitizensAPI.getNPCRegistry();
-				NPC npc = register.createNPC(EntityType.PLAYER, ChatColor.translateAlternateColorCodes('&', args[0]));
-				npc.spawn(player.getLocation());
+				if (args[0].equalsIgnoreCase("create")) {
+					if (args.length > 1) {
+						NPCRegistry register = CitizensAPI.getNPCRegistry();
+						NPC npc = register.createNPC(EntityType.PLAYER, ChatColor.translateAlternateColorCodes('&', args[1]));
+						npc.spawn(player.getLocation());
+					}else {
+						ChatUtils.sendMessage("Usage", "/npc <create> <playername>", player);
+					}
+				}else if (args[0].equalsIgnoreCase("remove")) {
+					CitizensAPI.getDefaultNPCSelector().getSelected(player).despawn();
+					CitizensAPI.getDefaultNPCSelector().getSelected(player).destroy();
+					ChatUtils.sendMessage("NPC", "Removed npc", player);
+				}
 			}else {
-				ChatUtils.sendMessage("Usage", "/npc <playername>", player);
+				ChatUtils.sendMessage("Usage", "/npc <create|remove> [playername]", player);
 			}
 		}
 		
