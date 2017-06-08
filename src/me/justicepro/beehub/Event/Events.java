@@ -20,6 +20,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Vector;
 
 import me.justicepro.beehub.Plugin;
 import me.justicepro.beehub.Data.PlayerData;
@@ -262,15 +263,31 @@ public class Events implements Listener {
 				player.hidePlayer(target);
 			}
 		}
+		if (player.getLocation().getY() < 0) {
+			player.teleport(player.getWorld().getSpawnLocation().setDirection(new Vector(0, 0, -180)));
+		}
 	}
 	
 	@EventHandler
 	public void onCommand(PlayerCommandPreprocessEvent event) {
 		Player player = event.getPlayer();
+		PlayerData data = new PlayerData(player.getName());
 		
 		if (event.getMessage().toLowerCase().startsWith("/npc")) {
 			String message = event.getMessage();
 			event.setMessage("/hub:npc" + message.substring("/npc".length()));
+		}
+		
+		if (event.getMessage().toLowerCase().equalsIgnoreCase("/bukkit:plugin") || event.getMessage().toLowerCase().equalsIgnoreCase("/plugin") || event.getMessage().toLowerCase().equalsIgnoreCase("/bukkit:pl") || event.getMessage().toLowerCase().equalsIgnoreCase("/pl")) {
+			if (!Rank.DEVELOPER.hasPermission(player)) {
+				Rank.DEVELOPER.sendPermissionFail(player);
+				event.setCancelled(true);
+			}
+		}
+		
+		if (event.getMessage().toLowerCase().equalsIgnoreCase("/bukkit:help") || event.getMessage().toLowerCase().equalsIgnoreCase("/help")) {
+			event.setCancelled(true);
+			ChatUtils.sendMessage("Help", "If you need help contact a staff memeber", player);
 		}
 	}
 	

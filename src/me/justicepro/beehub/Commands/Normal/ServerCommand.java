@@ -13,7 +13,7 @@ import me.justicepro.beehub.Utils.ChatUtils;
 public class ServerCommand extends Command {
 	
 	public ServerCommand() {
-		super("server");
+		super("goto");
 	}
 	
 	@Override

@@ -8,6 +8,7 @@ import org.bukkit.craftbukkit.v1_8_R3.CraftServer;
 
 import me.justicepro.beehub.Commands.ERROR.ErrorCommand;
 import me.justicepro.beehub.Commands.Normal.BalanceCommand;
+import me.justicepro.beehub.Commands.Normal.HubCommand;
 import me.justicepro.beehub.Commands.Normal.MsgCommand;
 import me.justicepro.beehub.Commands.Normal.ServerCommand;
 import me.justicepro.beehub.Commands.Normal.TestCommand;
@@ -21,6 +22,7 @@ import me.justicepro.beehub.Commands.Staff.Punishing.PunishCommand;
 import me.justicepro.beehub.Commands.Staff.Punishing.UnbanCommand;
 import me.justicepro.beehub.Commands.Staff.Punishing.WarnCommand;
 import me.justicepro.beehub.Commands.Staff.Ranks.RankCommand;
+import me.justicepro.beehub.Commands.Staff.Server.CreateServerCommand;
 import me.justicepro.beehub.Commands.Staff.Tools.DisguiseCommand;
 import me.justicepro.beehub.Commands.Staff.Tools.GamemodeCommand;
 import me.justicepro.beehub.Commands.Staff.Tools.NPCCommand;
@@ -48,7 +50,9 @@ public class CommandManager {
 				new GamemodeCommand(),
 				new PunishCommand(),
 				new ErrorCommand(),
-				new NPCCommand());
+				new NPCCommand(),
+				new HubCommand(),
+				new CreateServerCommand());
 		
 	}
 	
