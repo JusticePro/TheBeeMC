@@ -169,8 +169,8 @@ public class Events implements Listener {
 				Field footer = headerfooter.getClass().getDeclaredField("b");
 				header.setAccessible(true);
 				footer.setAccessible(true);
-				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&eThe&lBeeMC\n&bHome of &aSuper Fun&b Minigames\"")));
-				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.BeeMC.com\"")));
+				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lArticunoPvP\n&bHome of &aSuper Fun&b Minigames\"")));
+				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.ArticunoPvP.com\"")));
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
