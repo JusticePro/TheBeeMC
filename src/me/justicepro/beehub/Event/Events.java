@@ -169,8 +169,8 @@ public class Events implements Listener {
 				Field footer = headerfooter.getClass().getDeclaredField("b");
 				header.setAccessible(true);
 				footer.setAccessible(true);
-				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lMoltresPVP\n&cHome of fire relating games.\"")));
-				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.MoltresPVP.com\"")));
+				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lArticunoPVP\n&cHome of Fun Games.\"")));
+				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&astore.ArticunoPVP.com\"")));
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -290,5 +290,6 @@ public class Events implements Listener {
 			ChatUtils.sendMessage("Help", "If you need help contact a staff memeber", player);
 		}
 	}
+	
 	
 }
