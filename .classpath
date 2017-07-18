@@ -5,6 +5,5 @@
 	<classpathentry kind="lib" path="C:/Users/PCs for People/OneDrive/Master Folder/Minecraft/Plugins/UKit/UKitSDK.jar"/>
 	<classpathentry kind="lib" path="C:/Users/PCs for People/OneDrive/Master Folder/Minecraft/Plugins/Spigot/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar"/>
 	<classpathentry kind="lib" path="C:/Users/PCs for People/OneDrive/Master Folder/Minecraft/Plugins/Citizens 1.8.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/PCs for People/OneDrive/Master Folder/Minecraft/Plugins/HologramAPI_v1.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

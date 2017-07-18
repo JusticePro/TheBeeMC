@@ -23,7 +23,7 @@ public class Plugin extends JavaPlugin {
 	public static void showPlayerScoreboard(Player target) {
 		PlayerData data = new PlayerData(target.getName());
 		SidebarUtils.showSidebarDisplay(target,
-				ChatColor.translateAlternateColorCodes('&', "&b&lArticunoPvP"),
+				ChatColor.translateAlternateColorCodes('&', "&c&lMoltresPVP"),
 				"",
 				ChatColor.translateAlternateColorCodes('&', "&2&lRank"),
 				ChatColor.translateAlternateColorCodes('&', "&9" + data.getRank().getKey()),
@@ -34,7 +34,7 @@ public class Plugin extends JavaPlugin {
 				ChatColor.translateAlternateColorCodes('&', "&lServer"), 
 				ChatColor.translateAlternateColorCodes('&', "&7" + target.getWorld().getName()),
 				"   ",
-				ChatColor.translateAlternateColorCodes('&', "&6play.&b&lArticunoPvP&6.com"));
+				ChatColor.translateAlternateColorCodes('&', "&6play.&c&lMoltresPVP&6.com"));
 	}
 	
 	

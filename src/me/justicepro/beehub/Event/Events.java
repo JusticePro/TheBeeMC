@@ -70,9 +70,9 @@ public class Events implements Listener {
 			}
 		}
 
-		if (inv.getName().equalsIgnoreCase(InventoryManager.getStaffInventory().getName())) {
-			event.setCancelled(true);
-		}
+//		if (inv.getName().equalsIgnoreCase(InventoryManager.getStaffInventory().getName())) {
+//			event.setCancelled(true);
+//		}
 
 		if (inv.getName().equalsIgnoreCase(InventoryManager.getBuyInventory().getName())) {
 			event.setCancelled(true);
@@ -83,14 +83,14 @@ public class Events implements Listener {
 
 				if (event.getCurrentItem().getType().equals(Material.INK_SACK) && event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&aSpecial Rank"))) {
 					if (data.getCoins() >= 1000000000) {
-						if (Rank.SPECIAL.hasPermission(player)) {
+						if (Rank.VIP.hasPermission(player)) {
 							ChatUtils.sendMessage("Shop", "You already have that item.", player);
 						}else {
 							for (Player target : Bukkit.getOnlinePlayers()) {
 								ChatUtils.sendMessage("Shop", player.getDisplayName() + " just bought Special Rank!", target);
 							}
-							Rank.SPECIAL.setRank(player);
-							data.setRank(Rank.SPECIAL);
+							Rank.VIP.setRank(player);
+							data.setRank(Rank.VIP);
 							data.setCoins(data.getCoins() - 1000000000);
 						}
 					}else {
@@ -169,8 +169,8 @@ public class Events implements Listener {
 				Field footer = headerfooter.getClass().getDeclaredField("b");
 				header.setAccessible(true);
 				footer.setAccessible(true);
-				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lArticunoPvP\n&bHome of &aSuper Fun&b Minigames\"")));
-				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.ArticunoPvP.com\"")));
+				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lMoltresPVP\n&cHome of fire relating games.\"")));
+				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&a&lstore.MoltresPVP.com\"")));
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}

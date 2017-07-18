@@ -69,7 +69,7 @@ public class RankCommand extends Command {
 					ChatUtils.sendMessage("Usage", "/rank <rank> [player].", player);
 				}
 			}else {
-				Rank.LEADER.sendPermissionFail(player);
+				Rank.OWNER.sendPermissionFail(player);
 			}
 		}else {
 			if (args.length == 2) {

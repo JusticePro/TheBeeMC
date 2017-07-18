@@ -21,14 +21,14 @@ public class FireworkCommand extends Command {
 	public boolean execute(CommandSender sender, String label, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
-			if (Rank.SPECIAL.hasPermission(player)) {
+			if (Rank.VIP.hasPermission(player)) {
 				Firework firework = player.getWorld().spawn(player.getEyeLocation(), Firework.class);
 				FireworkMeta fireworkmeta = firework.getFireworkMeta();
 				fireworkmeta.addEffect(FireworkEffect.builder().with(Type.CREEPER).withColor(Color.GREEN).withFade(Color.AQUA, Color.BLUE, Color.GREEN, Color.MAROON).build());
 				fireworkmeta.addEffect(FireworkEffect.builder().with(Type.STAR).withColor(Color.GREEN).withFade(Color.AQUA, Color.BLUE, Color.GREEN, Color.MAROON).build());
 				firework.setFireworkMeta(fireworkmeta);
 			}else {
-				Rank.SPECIAL.sendPermissionFail(player);
+				Rank.VIP.sendPermissionFail(player);
 			}
 		}
 		return false;

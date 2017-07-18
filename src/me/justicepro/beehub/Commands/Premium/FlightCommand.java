@@ -19,7 +19,7 @@ public class FlightCommand extends Command {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
 			PlayerData data = new PlayerData(player.getName());
-			if (Rank.SPECIAL.hasPermission(player)) {
+			if (Rank.ADMIN.hasPermission(player)) {
 				if (player.getAllowFlight()) {
 					player.setAllowFlight(false);
 					ChatUtils.sendMessage("Abilities", "Fly has been disabled.", player);
@@ -28,7 +28,7 @@ public class FlightCommand extends Command {
 					ChatUtils.sendMessage("Abilities", "Fly has been enabled.", player);
 				}
 			}else {
-				Rank.SPECIAL.sendPermissionFail(player);
+				Rank.ADMIN.sendPermissionFail(player);
 			}
 		}
 		return false;

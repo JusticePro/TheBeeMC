@@ -35,13 +35,13 @@ public class InventoryManager {
 						new ItemBuilder(DyeColor.LIME).setName("&aUnban Player").build()).build();
 	}
 
-	public static Inventory getStaffInventory() {
-		return new InventoryBuilder(9 * 1, "&9Staff").addItems(
-				new ItemBuilder("JusticePro").setName(Rank.LEADER.getPrefix() + "JusticePro").build(),
-				new ItemBuilder("Wild_Yogurt").setName(Rank.LEADER.getPrefix() + "Wild_Yogurt").build(),
-				new ItemBuilder("SuperGamersGames").setName(Rank.LEADER.getPrefix() + "SuperGamersGames").build())
-				.build();
-	}
+//	public static Inventory getStaffInventory() {
+//		return new InventoryBuilder(9 * 1, "&9Staff").addItems(
+//				new ItemBuilder("JusticePro").setName(Rank.LEADER.getPrefix() + "JusticePro").build(),
+//				new ItemBuilder("Wild_Yogurt").setName(Rank.LEADER.getPrefix() + "Wild_Yogurt").build(),
+//				new ItemBuilder("SuperGamersGames").setName(Rank.LEADER.getPrefix() + "SuperGamersGames").build())
+//				.build();
+//	}
 
 	public static Inventory getBuyInventory() {
 		return getShopInventory(true);

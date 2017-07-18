@@ -10,30 +10,26 @@ import me.justicepro.beehub.Utils.ChatUtils;
 
 public enum Rank {
 	
-	ERROR("&8[&4&LERROR&8] &4", "Rank.Broken-Rank", true),
+	ERROR("&4&LERROR &4", "Rank.Broken-Rank", true),
 	
 	/* REGULAR */
 	DEFAULT("&9", "Regular"),
 	
 	/* MISC */
-	SPECIAL("&8[&a&lSpecial&8] &2", "Special"),
-	GOLD("&8[&e&lGold&8] &e", "Gold"),
-	EMERALD("&8[&a&lEmerald&8] &a", "Emerald"),
-	DIAMOND("&8[&b&lDiamond&8] &b", "Diamond"),
-	MAGMA("&8[&c&lMagma&8] &e", "Magma"),
+	VIP("&a&lVIP &a", "VIP"),
+	PRO("&9&lPRO &9", "PRO"),
+	CHAMPION("&e&lCHAMPION &e", "CHAMPION"),
 	
-	BUILDER("&8[&b&lBuilder&8] &b", "Builder"),
+	BUILDER("&2&lBUILDER &2", "Builder"),
 	
 	/* STAFF */
-	HELPER("&8[&b&lHelper&8] &b", "Helper"),
-	MOD("&8[&6&lMod&8] &6", "Mod"),
-	YOUTUBE("&8[&c&lYoutube&8] &c", "Youtube"),
-	TWITCH("&8[&5&lTwitch&8] &5", "Twitch"),
-	ADMIN("&8[&9&lAdmin&8] &9", "Admin"),
-	SERVERHOSTER("&8[&4Server Hoster&8] &c", "Server-Hoster"),
-	DEVELOPER("&8[&6&LDeveloper&8] &6", "Developer"),
-	LEADER("&8[&4&LLeader&8] &4", "Leader"),
-	OWNER("&8[&4&l&LOwner&8] &4", "Owner")
+	HELPER("&e&lTRANIEE &e", "Traniee"),
+	MOD("&6&lMOD &6", "Mod"),
+	YOUTUBE("&c&lYOUTUBE &c", "Youtube"),
+	TWITCH("&5&lTWITCH &5", "Twitch"),
+	ADMIN("&c&lADMIN &c", "Admin"),
+	DEVELOPER("&e&lDEV &e", "Developer"),
+	OWNER("&4&lOWNER &4", "Owner")
 	
 	
 	/* END */;
