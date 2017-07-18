@@ -2,4 +2,4 @@ name: ArticunoCore
 version: 1.0
 main: me.justicepro.beehub.Plugin
 
-depend: [NoCheatPlus, UKitSDK, Citizens]
+depend: [UKitSDK, Citizens]
