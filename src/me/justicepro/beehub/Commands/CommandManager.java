@@ -15,6 +15,7 @@ import me.justicepro.beehub.Commands.Normal.TestCommand;
 import me.justicepro.beehub.Commands.Premium.FireworkCommand;
 import me.justicepro.beehub.Commands.Premium.FlightCommand;
 import me.justicepro.beehub.Commands.Staff.Economy.CoinCommand;
+import me.justicepro.beehub.Commands.Staff.Messaging.AnnounceCommand;
 import me.justicepro.beehub.Commands.Staff.Messaging.BroadcastCommand;
 import me.justicepro.beehub.Commands.Staff.Punishing.BanCommand;
 import me.justicepro.beehub.Commands.Staff.Punishing.KickCommand;
@@ -52,7 +53,8 @@ public class CommandManager {
 				new ErrorCommand(),
 				new NPCCommand(),
 				new HubCommand(),
-				new CreateServerCommand());
+				new CreateServerCommand(),
+				new AnnounceCommand());
 		
 	}
 	
