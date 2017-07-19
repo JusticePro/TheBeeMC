@@ -33,17 +33,20 @@ public class Plugin extends JavaPlugin {
 	public static void showPlayerScoreboard(Player target) {
 		PlayerData data = new PlayerData(target.getName());
 		SidebarUtils.showSidebarDisplay(target,
-				ChatColor.translateAlternateColorCodes('&', "&b&lArticunoPVP"),
+				ChatColor.translateAlternateColorCodes('&', "&f&lArticuno"),
 				"",
-				ChatColor.translateAlternateColorCodes('&', "&b&lRank"),
-				ChatColor.translateAlternateColorCodes('&', "&9" + data.getRank().getKey()),
+				ChatColor.translateAlternateColorCodes('&', "&a&lServer"), 
+				ChatColor.translateAlternateColorCodes('&', "&7" + target.getWorld().getName()),
 				" ",
-				ChatColor.translateAlternateColorCodes('&', "&e&lTokens"),
+				ChatColor.translateAlternateColorCodes('&', "&b&lDiamonds"),
 				ChatColor.translateAlternateColorCodes('&', "&7" + data.getCoins()),
 				"  ",
-				ChatColor.translateAlternateColorCodes('&', "&lServer"), 
-				ChatColor.translateAlternateColorCodes('&', "&7" + target.getWorld().getName()),
+					
+				ChatColor.translateAlternateColorCodes('&', "&6&lRank"),
+				ChatColor.translateAlternateColorCodes('&', "&f" + data.getRank().getKey()),
+				
 				"   ",
+				ChatColor.translateAlternateColorCodes('&', "&c&lWebsite"),
 				ChatColor.translateAlternateColorCodes('&', "&6play.ArticunoPVP.com"));
 	}
 	

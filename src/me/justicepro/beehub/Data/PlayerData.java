@@ -118,5 +118,21 @@ public class PlayerData extends Data {
 		}
 		return config.getInt("luckycrates");
 	}
+	
+	public void setBanner(String banner) {
+		YamlConfiguration config = getConfig();
+		config.set("banner", banner);
+		save();
+		for (Player target : Bukkit.getOnlinePlayers()) {
+			Plugin.showPlayerScoreboard(target);
+		}
+	}
+	public String getBanner() {
+		YamlConfiguration config = getConfig();
+		if (!config.contains("banner")) {
+			setBanner("Anonymus");
+		}
+		return config.getString("banner");
+	}
 
 }

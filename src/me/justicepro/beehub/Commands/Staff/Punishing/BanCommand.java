@@ -45,7 +45,23 @@ public class BanCommand extends Command {
 							}
 							data.setBanned(true);
 							data.setBanReason(message.substring(0, message.length() - 1));
-							Bukkit.getPlayer(args[0]).kickPlayer(ChatColor.translateAlternateColorCodes('&', "&aYou've been banned by " + player.getDisplayName() + "\n&6Reason: \"" + message.substring(0, message.length() - 1) + "\""));
+							data.setBanner(player.getName());
+							
+							String banmsg = ChatColor.translateAlternateColorCodes('&', "&cKicked whilst connecting to %world%:"
+									+ "\n\n&c&lYOU ARE BANNED FOR PERMANENT"
+									+ "\nNetwork Ban"
+									+ "\n\n&7This punishment was issued by&b %user%"
+									+ "\n&2Unfairly punished? Make sure to create a ban-appeal at "
+									+ "&aarticunopvp.com").replaceAll("%user%", data.getBanner()).replaceAll("%world%", player.getWorld().getName());;
+							
+							String banmsg2 = ChatColor.translateAlternateColorCodes('&', "&cKicked whilst connecting to %world%:"
+									+ "\n\n&c&lYOU ARE BANNED FOR PERMANENT"
+									+ "\n&rNetwork Ban\n\n"
+									+ "&a&lReason: &a" + data.getBanReason()
+									+ "\n\n\n&7This punishment was issued by&b %user%"
+									+ "\n&2Unfairly punished? Make sure to create a ban-appeal at &aarticunopvp.com").replaceAll("%user%", data.getBanner()).replaceAll("%world%", player.getWorld().getName());
+							
+							Bukkit.getPlayer(args[0]).kickPlayer(banmsg2);
 						}else {
 							for (Player target : Bukkit.getOnlinePlayers()) {
 								ChatUtils.sendMessage("Punish", player.getDisplayName() + " has banned " + Bukkit.getOfflinePlayer(args[0]).getName() + " with reason \"" + message.substring(0, message.length() - 1) + "\".", target);

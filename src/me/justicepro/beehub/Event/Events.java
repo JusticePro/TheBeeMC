@@ -177,10 +177,26 @@ public class Events implements Listener {
 			((CraftPlayer) target).getHandle().playerConnection.sendPacket(headerfooter);
 		}
 		if (data.getBanned()) {
+			
+			String banmsg = ChatColor.translateAlternateColorCodes('&', "&cKicked whilst connecting to %world%:"
+					+ "\n\n&c&lYOU ARE BANNED FOR PERMANENT"
+					+ "\nNetwork Ban"
+					+ "\n\n&7This punishment was issued by&b %user%"
+					+ "\n&2Unfairly punished? Make sure to create a ban-appeal at "
+					+ "&aarticunopvp.com").replaceAll("%user%", data.getBanner()).replaceAll("%world%", player.getWorld().getName());;
+			
+			String banmsg2 = ChatColor.translateAlternateColorCodes('&', "&cKicked whilst connecting to %world%:"
+					+ "\n\n&c&lYOU ARE BANNED FOR PERMANENT"
+					+ "\n&rNetwork Ban\n\n"
+					+ "&a&lReason: &a" + data.getBanReason()
+					+ "\n\n\n&7This punishment was issued by&b %user%"
+					+ "\n&2Unfairly punished? Make sure to create a ban-appeal at &aarticunopvp.com").replaceAll("%user%", data.getBanner()).replaceAll("%world%", player.getWorld().getName());
+			
+			
 			if (data.getBanReason() != null) {
-				player.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&aYou've been banned.\n&6Reason: \"" + data.getBanReason() + "\""));
+				player.kickPlayer(banmsg2);
 			}else {
-				player.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&aYou've been banned."));
+				player.kickPlayer(banmsg);
 			}
 
 		}
