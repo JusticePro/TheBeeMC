@@ -170,7 +170,7 @@ public class Events implements Listener {
 				header.setAccessible(true);
 				footer.setAccessible(true);
 				header.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&b&lArticunoPVP\n&cHome of Fun Games.\"")));
-				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&astore.ArticunoPVP.com\"")));
+				footer.set(headerfooter, ChatSerializer.a(ChatColor.translateAlternateColorCodes('&', "\"&astore.articunopvp.com\"")));
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -268,9 +268,9 @@ public class Events implements Listener {
 		}
 		for (Player target : Bukkit.getOnlinePlayers()) {
 			PlayerData data = new PlayerData(target.getName());
-			if (player==target) {
-				data.getRank().setRankPrefix(player.getName(), player);
-			}
+//			if (player==target) {
+//				data.getRank().setRankPrefix(player.getName(), player);
+//			}
 			if (target.getWorld()==player.getWorld()) {
 				target.showPlayer(player);
 				player.showPlayer(target);

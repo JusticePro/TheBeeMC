@@ -47,7 +47,7 @@ public class Plugin extends JavaPlugin {
 				
 				"   ",
 				ChatColor.translateAlternateColorCodes('&', "&c&lWebsite"),
-				ChatColor.translateAlternateColorCodes('&', "&6play.ArticunoPVP.com"));
+				ChatColor.translateAlternateColorCodes('&', "&fmc.articunopvp.com"));
 	}
 	
 	

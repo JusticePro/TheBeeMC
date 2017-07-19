@@ -25,6 +25,7 @@ public enum Rank {
 	/* STAFF */
 	HELPER("&e&lTRANIEE &e", "Traniee"),
 	MOD("&6&lMOD &6", "Mod"),
+	SRMOD("&6&lSR.MOD &6", "SR.Mod"),
 	YOUTUBE("&c&lYOUTUBE &c", "Youtube"),
 	TWITCH("&5&lTWITCH &5", "Twitch"),
 	ADMIN("&c&lADMIN &c", "Admin"),
@@ -83,7 +84,7 @@ public enum Rank {
 	}
 	
 	public void sendPermissionFail(Player player) {
-		ChatUtils.sendMessage("Permissions", "You don't have rank &6" + getKey() + "&r.", player);
+		ChatUtils.sendMessage("Permissions", "You don't have rank " + getPrefix().substring(0, getPrefix().length() - 3) + "&7.", player);
 	}
 	
 	public void sendServerPermissionFail(Player player) {

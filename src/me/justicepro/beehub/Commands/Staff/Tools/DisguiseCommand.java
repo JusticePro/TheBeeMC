@@ -11,7 +11,7 @@ import me.justicepro.beehub.Utils.ChatUtils;
 public class DisguiseCommand extends Command {
 	
 	public DisguiseCommand() {
-		super("disguise");
+		super("nick");
 	}
 
 	public boolean execute(CommandSender sender, String label, String[] args) {
@@ -21,7 +21,7 @@ public class DisguiseCommand extends Command {
 			if (Rank.YOUTUBE.hasPermission(player)) {
 				if (args.length >= 1) {
 					data.set("disguised", true);
-					Rank.DEFAULT.setRankPrefix(args[0], player);
+					Rank.VIP.setRankPrefix(args[0], player);
 					ChatUtils.sendMessage("Disguise", "You've disguised your name as " + args[0], sender);
 				}else {
 					data.set("disguised", false);
